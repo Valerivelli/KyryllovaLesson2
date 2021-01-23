@@ -3,34 +3,18 @@ package hw5;
 import java.util.Date;
 import java.util.Objects;
 
-//Not immutable
-public class Order {
-    String item;
-    double size;
-    double price;
-    Date deliveryDate;
+//immutable
+public class Order2 {
+    private final String item;
+    private final double size;
+    private final double price;
+    private final Date deliveryDate;
 
-    public Order(String item, double size, double price, Date deliveryDate) {
+    public Order2(String item, double size, double price, Date deliveryDate) {
         this.item = item;
         this.size = size;
         this.price = price;
         this.deliveryDate = deliveryDate;
-    }
-
-    public String setItem() {
-        return item;
-    }
-
-    public double setSize() {
-        return size;
-    }
-
-    public double setPrice() {
-        return price;
-    }
-
-    public Date setDeliveryDate(String date) {
-        return deliveryDate;
     }
 
     public String getItem() {
