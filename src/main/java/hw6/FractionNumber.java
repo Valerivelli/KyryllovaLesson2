@@ -16,6 +16,14 @@ public class FractionNumber implements Fraction {
         if (denominator == 0) {
             throw new IllegalArgumentException("Zero in the denominator!");
         }
+        if (denominator % numerator == 0){
+            denominator = denominator/numerator;
+            numerator = 1;
+        }
+        if(numerator % denominator == 0){
+            numerator = numerator/denominator;
+            denominator = 1;
+        }
 
         this.numerator = numerator;
         this.denominator = denominator;
