@@ -35,6 +35,7 @@ class FractionNumberTest {
     void testPlusWithTheSameDenominator() {
         Fraction result = fractionNumber1.plus(fractionNumber2);
         assertEquals(new FractionNumber(3, 3), result);
+        assertEquals(new FractionNumber(1, 1), result);
 
     }
 
