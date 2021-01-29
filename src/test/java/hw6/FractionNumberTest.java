@@ -28,7 +28,7 @@ class FractionNumberTest {
         assertEquals(new FractionNumber(1, 3), fractionNumber1);
         assertNotEquals(fractionNumber2, fractionNumber1);
         assertEquals(new FractionNumber(3, 9), fractionNumber1);
-        assertEquals(new FractionNumber(3, 1), new FractionNumber(9, 3));
+        assertEquals(new FractionNumber(1, 3), new FractionNumber(9, 3));
     }
 
     @Test
@@ -72,13 +72,13 @@ class FractionNumberTest {
 
     @Test
     void testDivideWithTheSameDenominator() {
-        Fraction result = fractionNumber1.multiply(fractionNumber2);
+        Fraction result = fractionNumber1.divide(fractionNumber2);
         assertEquals(new FractionNumber(1, 2), result);
     }
 
     @Test
     void testDivideWithNotTheSameDenominator() {
-        Fraction result = fractionNumber1.multiply(fractionNumber3);
+        Fraction result = fractionNumber1.divide(fractionNumber3);
         assertEquals(new FractionNumber(4, 9), result);
     }
 }
