@@ -1,5 +1,6 @@
 package hw6;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class FractionNumber implements Fraction {
@@ -15,10 +16,32 @@ public class FractionNumber implements Fraction {
         if (denominator == 0) {
             throw new IllegalArgumentException("Zero in the denominator!");
         }
+        if (denominator % numerator == 0){
+            denominator = denominator/numerator;
+            numerator = 1;
+        }
+        if(numerator % denominator == 0){
+            numerator = numerator/denominator;
+            denominator = 1;
+        }
 
         this.numerator = numerator;
         this.denominator = denominator;
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FractionNumber that = (FractionNumber) o;
+        return numerator == that.numerator &&
+                denominator == that.denominator;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator, denominator);
     }
 
     @Override
