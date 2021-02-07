@@ -34,22 +34,6 @@ public final class Book {
         return genre;
     }
 
-    private String getStringGenre() {
-        String genre = "";
-        switch (this.genre) {
-            case FAIRY_TALE:
-                genre = "Fairy tale";
-                break;
-            case FANTASY:
-                genre = "Fantasy";
-                break;
-            case HORROR:
-                genre = "Horror";
-                break;
-        }
-        return genre;
-    }
-
     public Long getIsbn() {
         return isbn;
     }
@@ -77,17 +61,33 @@ public final class Book {
                 "author=" + author +
                 ", title='" + title + '\'' +
                 ", issueDate=" + issueDate +
-                ", genre=" + getStringGenre() +
+                ", genre=" + genre.getValue() +
                 ", isbn=" + isbn +
                 '}';
 
     }
 
-    enum Genre {
-        FAIRY_TALE,
-        FANTASY,
-        HORROR
-    }
+    public enum Genre {
+        FANTASY("Fantasy"),
+        ADVENTURE("Adventure"),
+        SCIENCE_FICTION("Science Fiction"),
+        MOTIVATIONAL("Motivational"),
+        HEALTH("Health"),
+        HISTORY("History"),
+        TRAVEL("Travel");
 
+        private final String value;
+
+        Genre(String value) {
+            this.value = value;
+        }
+        public String getValue() {
+            return value;
+        }
+        @Override
+        public String toString() {
+            return value;
+        }
+    }
 
 }
