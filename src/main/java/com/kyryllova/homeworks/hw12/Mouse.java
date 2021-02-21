@@ -6,6 +6,5 @@ import lombok.Value;
 @Value
 public class Mouse {
     String name;
-    @Getter
     int kilocalories;
 }

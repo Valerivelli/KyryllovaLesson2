@@ -11,17 +11,13 @@ import java.util.concurrent.PriorityBlockingQueue;
 public class Cat {
     Queue<Mouse> stomach = new PriorityBlockingQueue<>(5, Comparator.comparingInt(Mouse::getKilocalories));
 
-    int maxSize = 5;
-
     public boolean eat(Mouse mouse) {
-        boolean flag = true;
-        if (stomach.size() < maxSize) {
-            stomach.offer(mouse);
+        if (stomach.size() < 5) {
+            return stomach.offer(mouse);
         } else {
-            flag = false;
             log.info("Oh no! Stomach is full!");
+            return false;
         }
-        return flag;
     }
 
     public Mouse outOfStomach() {
