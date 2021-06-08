@@ -1,2 +1,3 @@
 # Project exclude paths
 /target/
+!/src/main/java/com/kyryllova/homeworks/lesson/Main.java
